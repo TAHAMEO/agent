@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent"
+version = "0.1.0"
+description = "A tool-using agent that runs on top of your own local LLM"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+llamacpp = ["llama-cpp-python>=0.2.80"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+agent = "agent.__main__:main"
+
+[tool.setuptools]
+packages = ["agent", "agent.llm", "agent.tools"]
